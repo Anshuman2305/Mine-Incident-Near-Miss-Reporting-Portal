@@ -369,7 +369,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     padding-left: 48px;
 }
 
-.input-wrapper input:focus+.input-icon {
+.input-wrapper:focus-within .input-icon {
     color: hsl(var(--primary));
     transform: scale(1.05);
 }
