@@ -343,11 +343,21 @@ textarea:focus {
     background: rgba(255, 255, 255, 0.05);
 }
 
-/* Hide native WebKit calendar/time picker indicators */
+/* Style WebKit native calendar and time picker indicators to match the dark theme */
 input[type="date"]::-webkit-calendar-picker-indicator,
 input[type="time"]::-webkit-calendar-picker-indicator {
-    opacity: 0;
+    filter: invert(0.85);
+    opacity: 0.5;
     cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover,
+input[type="time"]::-webkit-calendar-picker-indicator:hover,
+input[type="date"]:focus::-webkit-calendar-picker-indicator,
+input[type="time"]:focus::-webkit-calendar-picker-indicator {
+    opacity: 1;
+    filter: invert(53%) sepia(87%) saturate(2878%) hue-rotate(10deg) brightness(104%) contrast(107%);
 }
 
 /* Input wrappers with icons */
