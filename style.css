@@ -343,6 +343,13 @@ textarea:focus {
     background: rgba(255, 255, 255, 0.05);
 }
 
+/* Hide native WebKit calendar/time picker indicators */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    cursor: pointer;
+}
+
 /* Input wrappers with icons */
 .input-wrapper {
     position: relative;
@@ -507,7 +514,8 @@ textarea:focus {
 .label-with-counter {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    gap: 12px;
 }
 
 .word-counter {
@@ -518,6 +526,8 @@ textarea:focus {
     padding: 3px 10px;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.05);
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .word-counter.warning {
